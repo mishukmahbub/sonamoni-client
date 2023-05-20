@@ -12,7 +12,6 @@ const AddToy = () => {
     } = useForm();
 
     const onSubmit = data => {
-        data.skills = selectedOption;
 
         fetch("http://localhost:5000/addToys", {
             method: "POST",
@@ -23,13 +22,16 @@ const AddToy = () => {
             .then((result) => {
                 console.log(result);
             });
-        console.log(data);
+        // console.log(data);
     };
 
 
     return (
         <div>
-
+            <form onSubmit={handleSubmit(onSubmit)}>
+                {errors.exampleRequired && <span>This field is required</span>}
+                
+            </form>
         </div>
     );
 };
