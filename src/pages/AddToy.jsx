@@ -16,7 +16,6 @@ const AddToy = () => {
     } = useForm();
 
     const addToy = data => {
-
         fetch("http://localhost:5000/addToys", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -78,6 +77,7 @@ const AddToy = () => {
                 
                 <input
                     type="number"
+                    step="0.01"
                     className="input w-full max-w-xs input-bordered input-info text-center mx-auto"
                     {...register("price", { required: true })}
                     placeholder="Price"
@@ -96,6 +96,7 @@ const AddToy = () => {
                 
                 <input
                     type="number"
+                    step="0.01"
                     className="input w-full max-w-xs input-bordered input-info text-center mx-auto"
                     {...register("rating", { required: true })}
                     placeholder="Rating"
@@ -119,7 +120,7 @@ const AddToy = () => {
 
                 />
                 <br />
-                <input onClick={notify} className="btn btn-primary btn-sm w-3/6 mx-auto w-full max-w-xs" value="Add Toy" type="submit" />
+                <input onClick={notify} className="btn btn-primary btn-sm mx-auto w-full max-w-xs" value="Add Toy" type="submit" />
                 <br />
             </form>
             <ToastContainer />
