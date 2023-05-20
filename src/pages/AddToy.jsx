@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const AddToy = () => {
     const { user } = useContext(AuthContext);
+    // console.log(user);
     const notify = () => toast("Toy Info Updated!");
     const {
         register,
@@ -25,42 +26,101 @@ const AddToy = () => {
             .then((result) => {
                 console.log(result);
             });
-        // console.log(data);
+        console.log(data);
     };
 
 
     return (
-        <div>
-            <form className="grid grid-cols-1" onSubmit={handleSubmit(addToy)}>
+        <div className='my-4'>
+            <h3 className="text-lg font-bold text-center">Add New Toy</h3>
+            <br />
+            <form className="grid grid-cols-1 text-center" onSubmit={handleSubmit(addToy)}>
                 {errors.exampleRequired && <span>This field is required</span>}
 
-                <span className="label-text">Price</span>
+                
                 <input
                     type="text"
-                    className="input w-full max-w-xs input-bordered input-info"
+                    className="input w-full max-w-xs input-bordered input-info text-center mx-auto"
+                    {...register("name", { required: true })}
+                    placeholder="Toy Name"
+
+                />
+                <br />
+                
+                <input
+                    type="text"
+                    className="input w-full max-w-xs input-bordered input-info text-center mx-auto"
+                    {...register("picture_url", { required: true })}
+                    placeholder="Image URL"
+
+                />
+                <br />
+                
+                <input
+                    type="text"
+                    className="input w-full max-w-xs input-bordered input-info text-center mx-auto"
+                    {...register("seller_name", { required: true })}
+                    placeholder="Seller Name"
+                    defaultValue={user?.displayName}
+
+                />
+                <br />
+                
+                <input
+                    type="email"
+                    className="input w-full max-w-xs input-bordered input-info text-center mx-auto"
+                    {...register("seller_email", { required: true })}
+                    placeholder="Seller Email"
+                    value={user?.email}
+
+                />
+                <br />
+                
+                <input
+                    type="number"
+                    className="input w-full max-w-xs input-bordered input-info text-center mx-auto"
                     {...register("price", { required: true })}
                     placeholder="Price"
 
                 />
                 <br />
-                <span className="label-text">Available Quantity</span>
+                
                 <input
-                    type="text"
-                    className="input w-full max-w-xs input-bordered input-info"
+                    type="number"
+                    className="input w-full max-w-xs input-bordered input-info text-center mx-auto"
                     {...register("available_quantity", { required: true })}
                     placeholder="Available Quantity"
 
                 />
                 <br />
-                <span className="label-text">Description</span>
+                
+                <input
+                    type="number"
+                    className="input w-full max-w-xs input-bordered input-info text-center mx-auto"
+                    {...register("rating", { required: true })}
+                    placeholder="Rating"
+
+                />
+                <br />
+                
+                <input
+                    type="text"
+                    className="input w-full max-w-xs input-bordered input-info text-center mx-auto"
+                    {...register("sub_category", { required: true })}
+                    placeholder="Sub Category"
+
+                />
+                <br />
+
                 <textarea
-                    className="textarea textarea-info"
+                    className="textarea textarea-info text-center mx-auto w-full max-w-xs"
                     {...register("detail_description", { required: true })}
                     placeholder="Description"
 
                 />
                 <br />
-                <input onClick={notify} className="btn btn-primary btn-sm w-3/6 mx-auto" value="Update Toy Info" type="submit" />
+                <input onClick={notify} className="btn btn-primary btn-sm w-3/6 mx-auto w-full max-w-xs" value="Add Toy" type="submit" />
+                <br />
             </form>
             <ToastContainer />
         </div>
