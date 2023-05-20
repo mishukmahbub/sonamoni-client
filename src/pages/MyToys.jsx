@@ -14,8 +14,7 @@ const MyToys = () => {
     const notifyDelete = () => toast("Toy Deleted!");
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myToys/speedytoys@example.com`) //TODO
-            // ${user?.email}
+        fetch(`http://localhost:5000/myToys/${user?.email}`)
             .then((res) => res.json())
             .then((data) => {
                 console.log(data);
