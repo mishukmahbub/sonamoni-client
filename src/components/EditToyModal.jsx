@@ -46,7 +46,7 @@ const EditToyModal = (props) => {
                             defaultValue={available_quantity}
                         />
                         <br />
-                        <span className="label-text">What is your name?</span>
+                        <span className="label-text">Description</span>
                         <textarea
                             className="textarea textarea-info"
                             {...register("detail_description", { required: true })}
