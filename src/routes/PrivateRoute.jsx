@@ -8,7 +8,11 @@ const PrivateRoute = ({ children }) => {
     const location = useLocation();
     // console.log('user in private route', user);
     if (loading) {
-        return <div className="mx-auto w-48 h-48 border-8 border-t-0 border-red-600 rounded-full animate-spin"></div>
+        return (
+            <div className="flex justify-center items-center h-full">
+                <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-gray-900"></div>
+            </div>
+        )
     }
 
     if (user) {
