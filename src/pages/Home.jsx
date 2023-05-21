@@ -136,6 +136,13 @@ const Home = () => {
 
             </Tabs>
 
+            {/* FAQ */}
+            <h2 className='font-extrabold text-4xl text-center my-10'>FAQ</h2>
+            <div data-aos="fade-left" className='my-10'>
+                <FAQ></FAQ>
+            </div>
+
+
             {/* blog */}
             <div>
                 <h2 className='font-extrabold text-4xl text-center my-10'>Our Blog</h2>
@@ -149,11 +156,6 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-            </div>
-            {/* FAQ */}
-            <h2 className='font-extrabold text-4xl text-center my-10'>FAQ</h2>
-            <div data-aos="fade-left" className='my-10'>
-                <FAQ></FAQ>
             </div>
         </div>
     );
