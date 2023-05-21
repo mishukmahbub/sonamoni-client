@@ -7,16 +7,14 @@ import useTitle from '../hooks/useTitle';
 
 const Login = () => {
     useTitle('Login');
-    const { signIn, googleSignIn, githubSignIn } = useContext(AuthContext);
+    const { signIn, googleSignIn } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
-    // console.log('login page location', location)
     const from = location.state?.from?.pathname || '/';
 
     const [email, setEmail] = useState(null);
     const [password, setPassword] = useState(null);
     const [error, setError] = useState(null);
-
 
     const handleLogin = event => {
         event.preventDefault();
@@ -37,20 +35,6 @@ const Login = () => {
         googleSignIn()
             .then(result => {
                 const loggedUser = result.user;
-                // console.log(loggedUser);
-                navigate(from, { replace: true })
-            })
-            .catch(error => {
-                setError(error.message);
-            })
-    }
-
-    const handleGithubLogin = () => {
-        setError("")
-        githubSignIn()
-            .then(result => {
-                const loggedUser = result.user;
-                // console.log(loggedUser);
                 navigate(from, { replace: true })
             })
             .catch(error => {
@@ -90,9 +74,6 @@ const Login = () => {
                             </div>
                             <div className="form-control">
                                 <button className="btn btn-primary" onClick={handleGoogleLogin} >Login with Google</button>
-                            </div>
-                            <div className="form-control">
-                                <button className="btn btn-primary" onClick={handleGithubLogin} >Login with Github</button>
                             </div>
                         </form>
                     </div>
