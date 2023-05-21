@@ -5,9 +5,22 @@ import FAQ from '../components/FAQ';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import useTitle from '../hooks/useTitle';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Home = () => {
     useTitle('Home');
+
+    // AOS
+    useEffect(() => {
+        AOS.init({
+            duration: 800,
+            offset: 100,
+            easing: 'ease-in-out',
+        });
+    }, []);
+
+
     // racing cars
     const [racingCars, setRacingCars] = useState([]);
     useEffect(() => {
@@ -41,7 +54,7 @@ const Home = () => {
     return (
         <>
             {/* Banner */}
-            <div className="flex flex-col gap-8 md:flex-row-reverse justify-center items-center bg-primary rounded-md my-10 py-6 px-4 sm:px-6 lg:px-8">
+            <div data-aos="fade-up" className="flex flex-col gap-8 md:flex-row-reverse justify-center items-center bg-primary rounded-md my-10 py-6 px-4 sm:px-6 lg:px-8">
                 <div className="flex-1">
                     <h2 className="text-2xl font-bold leading-7 sm:text-3xl sm:truncate">
                         Discover Exciting Toy Cars
@@ -57,7 +70,7 @@ const Home = () => {
 
             {/* gallery */}
             <h2 className='font-extrabold text-4xl text-center my-10'>Gallery</h2>
-            <div className="carousel rounded-box">
+            <div data-aos="zoom-in" className="carousel rounded-box">
                 <div className="carousel-item">
                     <img src="https://images.pexels.com/photos/35967/mini-cooper-auto-model-vehicle.jpg?auto=compress&cs=tinysrgb&w=600" alt="Burger" />
                 </div>
@@ -83,7 +96,7 @@ const Home = () => {
 
             {/* car detail */}
             <h2 className='font-extrabold text-4xl text-center my-10'>Shop by Category</h2>
-            <Tabs>
+            <Tabs data-aos="zoom-out">
                 <TabList>
                     <Tab>Racing Cars</Tab>
                     <Tab>City Cars</Tab>
@@ -126,7 +139,7 @@ const Home = () => {
             {/* blog */}
             <div>
                 <h2 className='font-extrabold text-4xl text-center my-10'>Our Blog</h2>
-                <div className="hero bg-base-200" style={{ backgroundImage: `url("https://images.pexels.com/photos/68256/pexels-photo-68256.jpeg?auto=compress&cs=tinysrgb&w=600")` }}>
+                <div data-aos="fade-right" className="hero bg-base-200" style={{ backgroundImage: `url("https://images.pexels.com/photos/68256/pexels-photo-68256.jpeg?auto=compress&cs=tinysrgb&w=600")` }}>
                     <div className="hero-overlay bg-opacity-60"></div>
                     <div className="hero-content text-center text-neutral-content">
                         <div className="max-w-md">
@@ -139,7 +152,7 @@ const Home = () => {
             </div>
             {/* FAQ */}
             <h2 className='font-extrabold text-4xl text-center my-10'>FAQ</h2>
-            <div className='my-10'>
+            <div data-aos="fade-left" className='my-10'>
                 <FAQ></FAQ>
             </div>
         </>
