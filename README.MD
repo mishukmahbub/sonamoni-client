@@ -6,8 +6,11 @@ This is a toy car website built using React, Tailwind CSS, Node.js, Express, and
 
 ## Table of Contents
 - [Features](#features)
+- [Installation](#installation)
 - [Usage](#usage)
 - [Technologies](#technologies)
+- [Contributing](#contributing)
+- [License](#license)
 
 ## Features
 
@@ -55,6 +58,7 @@ This is a toy car website built using React, Tailwind CSS, Node.js, Express, and
    - It includes an interesting image or GIF and a "Back to Home" button to redirect users to the home page.
 
 
+
 ## Technologies
 
 - React
@@ -62,4 +66,13 @@ This is a toy car website built using React, Tailwind CSS, Node.js, Express, and
 - Node.js
 - Express
 - MongoDB
+
+## Contributors
+
+- Mishuk Mahbub
+
+## License
+
+All rights reserved by Mishuk Mahbub
+
 
