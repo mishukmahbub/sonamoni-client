@@ -20,13 +20,12 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home />,
-                // loader: () => fetch('http://localhost:5000/allToys/')
             },
 
             {
                 path: "all-toys",
                 element: <AllToys></AllToys>,
-                loader: () => fetch('http://localhost:5000/allToys/')
+                loader: () => fetch('https://b7a11-toy-marketplace-server-side-mishukmahbub.vercel.app/allToys/')
             },
             {
                 path: "blog",
@@ -57,28 +56,6 @@ const router = createBrowserRouter([
             },
         ],
     },
-    // {
-    //     path: "/",
-    //     element: <HomeLayout />,
-    //     errorElement: <ErrorPage />,
-    //     children: [
-    //         {
-    //             path: 'toy-details/:id',
-    //             element: <PrivateRoute><ToyDetails /></PrivateRoute>,
-    //             loader: ({ params }) => fetch(`http://localhost:5000/singleToy/${params.id}`)
-    //         },
-    //         {
-    //             path: 'my-toys',
-    //             element: <PrivateRoute> <MyToys /> </PrivateRoute>,
-    //             loader: ({ params }) => fetch(`http://localhost:5000/singleToy/${params.id}`)
-    //         },
-    //         {
-    //             path: 'add-toy',
-    //             element: <PrivateRoute><AddToy /></PrivateRoute>,
-
-    //         },
-    //     ]
-    // },
 ]);
 
 export default router;

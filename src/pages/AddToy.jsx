@@ -18,14 +18,15 @@ const AddToy = () => {
     } = useForm();
 
     const addToy = data => {
-        fetch("http://localhost:5000/addToys", {
+        console.log('data',data);
+        fetch("https://b7a11-toy-marketplace-server-side-mishukmahbub.vercel.app/addToys", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(data),
         })
             .then((res) => res.json())
             .then((result) => {
-                // console.log(result);
+                console.log('result' ,result);
             });
         // console.log(data);
     };

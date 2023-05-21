@@ -12,22 +12,26 @@ const MyToys = () => {
     const [toys, setToys] = useState([]);
     const [control, setControl] = useState(false);
     const [showModal, setShowModal] = useState(false);
+    const [sort, setSort] = useState("desc");
+
+
     const notify = () => toast("Toy Info Updated!");
     const notifyDelete = () => toast("Toy Deleted!");
 
     useEffect(() => {
-        fetch(`https://b7a11-toy-marketplace-server-side-mishukmahbub.vercel.app/myToys/${user?.email}`)
+        fetch(`https://b7a11-toy-marketplace-server-side-mishukmahbub.vercel.app/myToys/${user?.email}?sort=${sort}`)
+        
             .then((res) => res.json())
             .then((data) => {
-                console.log(data);
+                // console.log(data);
                 setToys(data);
             });
-    }, [user, control]);
+    }, [user, control, sort]);
 
     const handleToyEdit = data => {
         // console.log(data)
 
-        fetch(`http://localhost:5000/editToy/${data._id}`, {
+        fetch(`https://b7a11-toy-marketplace-server-side-mishukmahbub.vercel.app/editToy/${data._id}`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(data),
@@ -46,7 +50,7 @@ const MyToys = () => {
     const handleToyDelete = id => {
         const proceed = confirm('Are You sure you want to delete?');
         if (proceed) {
-            fetch(`http://localhost:5000/deleteToy/${id}`, {
+            fetch(`https://b7a11-toy-marketplace-server-side-mishukmahbub.vercel.app/deleteToy/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -60,8 +64,19 @@ const MyToys = () => {
         }
     }
 
+    const handleSort = (order) => {
+        setSort(order);
+      };
+
     return (
         <div className="overflow-x-auto">
+            <div className='text-center my-4'>
+                <span className='font-bold'>Sort by Price: </span>
+                <div className="btn-group btn-group-vertical lg:btn-group-horizontal">
+                    <button onClick={() => handleSort('asc')} className="btn btn-xs btn-primary hover:btn-primary-focus">Low to High</button>
+                    <button onClick={() => handleSort('desc')} className="btn btn-xs btn-primary hover:btn-primary-focus">High to Low</button>
+                </div>
+            </div>
             <table className="table table-zebra w-full">
                 {/* head */}
                 <thead>

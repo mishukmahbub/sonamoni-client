@@ -7,7 +7,7 @@ const App = () => {
     // Function to fetch data from API or perform any side effect
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:5000/AllToys');
+        const response = await fetch('https://b7a11-toy-marketplace-server-side-mishukmahbub.vercel.app/AllToys');
         const jsonData = await response.json();
         setData(jsonData);
       } catch (error) {
