@@ -52,7 +52,7 @@ const Home = () => {
             });
     }, []);
     return (
-        <>
+        <div className='container px-2'>
             {/* Banner */}
             <div data-aos="fade-up" className="flex flex-col gap-8 md:flex-row-reverse justify-center items-center bg-primary rounded-md my-10 py-6 px-4 sm:px-6 lg:px-8">
                 <div className="flex-1">
@@ -64,7 +64,7 @@ const Home = () => {
                     </p>
                 </div>
                 <div className="flex-1">
-                    <img src="https://images.pexels.com/photos/163768/car-toy-childhood-child-163768.jpeg?auto=compress&cs=tinysrgb&w=600" alt="toy-cars" className="h-96 w-full rounded-md" />
+                    <img src="https://images.pexels.com/photos/163768/car-toy-childhood-child-163768.jpeg?auto=compress&cs=tinysrgb&w=600" alt="toy-cars" className="h-96 w-full object-cover rounded-md" />
                 </div>
             </div>
 
@@ -104,7 +104,7 @@ const Home = () => {
                 </TabList>
 
                 <TabPanel>
-                    <div className='grid grid-cols-3 gap-8'>
+                    <div className='grid md:grid-cols-3 gap-8'>
                         {
                             racingCars.map(car => <CarCard
                                 key={car._id}
@@ -114,7 +114,7 @@ const Home = () => {
                     </div>
                 </TabPanel>
                 <TabPanel>
-                    <div className='grid grid-cols-3 gap-8'>
+                    <div className='grid md:grid-cols-3 gap-8'>
                         {
                             cityCars.map(car => <CarCard
                                 key={car._id}
@@ -124,7 +124,7 @@ const Home = () => {
                     </div>
                 </TabPanel>
                 <TabPanel>
-                    <div className='grid grid-cols-3 gap-8'>
+                    <div className='grid md:grid-cols-3 gap-8'>
                         {
                             offRoadCars.map(car => <CarCard
                                 key={car._id}
@@ -155,7 +155,7 @@ const Home = () => {
             <div data-aos="fade-left" className='my-10'>
                 <FAQ></FAQ>
             </div>
-        </>
+        </div>
     );
 };
 
