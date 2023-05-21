@@ -25,7 +25,7 @@ const Navbar = () => {
                         <li><NavLink to='/blog' className={({ isActive }) => (isActive ? "border border-l-4 border-l-primary-focus" : "")}>Blog</NavLink></li>
                     </ul>
                 </div>
-                <Link to='/' className="btn btn-ghost normal-case text-xl"><img src="/src/assets/toys.svg" className='w-6' /> <span className='ms-2'>Sonamoni</span> </Link>
+                <Link to='/' className="btn btn-ghost normal-case text-xl"><img src="/toys.svg" className='w-6' /> <span className='ms-2'>Sonamoni</span> </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
