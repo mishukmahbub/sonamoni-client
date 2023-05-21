@@ -10,7 +10,7 @@ const AllToys = () => {
 
     const [searchText, setSearchText] = useState("");
     const handleSearch = () => {
-        fetch(`http://localhost:5000/getToysByText/${searchText}`)
+        fetch(`https://b7a11-toy-marketplace-server-side-mishukmahbub.vercel.app/getToysByText/${searchText}`)
           .then((res) => res.json())
           .then((data) => {
             console.log(data);

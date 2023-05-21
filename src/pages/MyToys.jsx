@@ -14,7 +14,7 @@ const MyToys = () => {
     const notifyDelete = () => toast("Toy Deleted!");
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myToys/${user?.email}`)
+        fetch(`https://b7a11-toy-marketplace-server-side-mishukmahbub.vercel.app/myToys/${user?.email}`)
             .then((res) => res.json())
             .then((data) => {
                 console.log(data);

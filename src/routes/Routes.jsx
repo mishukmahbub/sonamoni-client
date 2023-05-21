@@ -20,13 +20,13 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home />,
-                loader: () => fetch('http://localhost:5000/allToys/')
+                // loader: () => fetch('http://localhost:5000/allToys/')
             },
 
             {
                 path: "all-toys",
                 element: <AllToys></AllToys>,
-                loader: () => fetch('http://localhost:5000/allToys/')
+                loader: () => fetch('https://b7a11-toy-marketplace-server-side-mishukmahbub.vercel.app/allToys/')
             },
             {
                 path: "blog",
@@ -43,7 +43,7 @@ const router = createBrowserRouter([
             {
                 path: 'toy-details/:id',
                 element: <PrivateRoute><ToyDetails /></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/singleToy/${params.id}`)
+                loader: ({ params }) => fetch(`https://b7a11-toy-marketplace-server-side-mishukmahbub.vercel.app/singleToy/${params.id}`)
             },
             {
                 path: 'my-toys',

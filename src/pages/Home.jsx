@@ -9,7 +9,7 @@ const Home = () => {
     // racing cars
     const [racingCars, setRacingCars] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/getToysBySubCategory/racing-cars`)
+        fetch(`https://b7a11-toy-marketplace-server-side-mishukmahbub.vercel.app/getToysBySubCategory/racing-cars`)
             .then((res) => res.json())
             .then((data) => {
                 console.log(data);
@@ -19,7 +19,7 @@ const Home = () => {
     // city cars
     const [cityCars, setCityCars] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/getToysBySubCategory/city-cars`)
+        fetch(`https://b7a11-toy-marketplace-server-side-mishukmahbub.vercel.app/getToysBySubCategory/city-cars`)
             .then((res) => res.json())
             .then((data) => {
                 console.log(data);
@@ -29,7 +29,7 @@ const Home = () => {
     // off road cars
     const [offRoadCars, setOffRoadCars] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/getToysBySubCategory/off-road-cars`)
+        fetch(`https://b7a11-toy-marketplace-server-side-mishukmahbub.vercel.app/getToysBySubCategory/off-road-cars`)
             .then((res) => res.json())
             .then((data) => {
                 console.log(data);
