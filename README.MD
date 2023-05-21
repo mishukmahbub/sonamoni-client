@@ -6,10 +6,8 @@ This is a toy car website built using React, Tailwind CSS, Node.js, Express, and
 
 ## Table of Contents
 - [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
 - [Technologies](#technologies)
-- [Contributing](#contributing)
+- [Contributors](#contributors)
 - [License](#license)
 
 ## Features
