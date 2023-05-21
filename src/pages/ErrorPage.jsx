@@ -9,10 +9,10 @@ const ErrorPage = () => {
         <section className='h-screen'>
             <div className='container flex flex-col items-center mx-auto'>
                 <figure className=''>
-                    <img src="https://thumbs.dreamstime.com/b/print-144211553.jpg" alt="" className='w-11/12'/>
+                    <img src="https://img.freepik.com/free-vector/hand-drawn-404-error_23-2147735153.jpg?w=500" alt="" className=''/>
                 </figure>
             </div>
-            <div className='text-center'>
+            <div className='text-center py-8'>
                 <Link
                     to='/'
                     className='px-8 py-3 font-semibold rounded btn-secondary'
