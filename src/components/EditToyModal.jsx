@@ -30,7 +30,8 @@ const EditToyModal = (props) => {
                         />
                         <span className="label-text">Price</span>
                         <input
-                            type="text"
+                            type="number"
+                            step="0.01"
                             className="input w-full max-w-xs input-bordered input-info"
                             {...register("price", { required: true })}
                             placeholder="Price"
@@ -39,7 +40,8 @@ const EditToyModal = (props) => {
                         <br />
                         <span className="label-text">Available Quantity</span>
                         <input
-                            type="text"
+                            type="number"
+                            step="0.01"
                             className="input w-full max-w-xs input-bordered input-info"
                             {...register("available_quantity", { required: true })}
                             placeholder="Available Quantity"

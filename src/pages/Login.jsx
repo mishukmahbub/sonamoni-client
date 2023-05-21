@@ -10,7 +10,7 @@ const Login = () => {
     const { signIn, googleSignIn, githubSignIn } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
-    console.log('login page location', location)
+    // console.log('login page location', location)
     const from = location.state?.from?.pathname || '/';
 
     const [email, setEmail] = useState(null);
@@ -25,7 +25,7 @@ const Login = () => {
         signIn(email, password)
             .then(result => {
                 const loggedUser = result.user;
-                console.log(loggedUser);
+                // console.log(loggedUser);
                 navigate(from, { replace: true })
             })
             .catch(error => {
@@ -37,7 +37,7 @@ const Login = () => {
         googleSignIn()
             .then(result => {
                 const loggedUser = result.user;
-                console.log(loggedUser);
+                // console.log(loggedUser);
                 navigate(from, { replace: true })
             })
             .catch(error => {
@@ -50,7 +50,7 @@ const Login = () => {
         githubSignIn()
             .then(result => {
                 const loggedUser = result.user;
-                console.log(loggedUser);
+                // console.log(loggedUser);
                 navigate(from, { replace: true })
             })
             .catch(error => {

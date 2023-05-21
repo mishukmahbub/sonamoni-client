@@ -25,7 +25,7 @@ const Register = () => {
         createUser(email, password)
             .then(result => {
                 const loggedUser = result.user;
-                console.log(loggedUser);
+                // console.log(loggedUser);
                 updateUserData(loggedUser, name, photo);
                 navigate(from, { replace: true })
             })
@@ -40,7 +40,7 @@ const Register = () => {
             photoURL: photo,
         })
             .then(() => {
-                console.log('user name updated')
+                // console.log('user name updated')
             })
             .catch(error => {
                 setError(error.message);

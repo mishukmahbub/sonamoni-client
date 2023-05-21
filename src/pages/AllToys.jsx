@@ -6,24 +6,24 @@ const AllToys = () => {
     useTitle('All Toys');
     const allToys = useLoaderData();
     const [toys, setToys] = useState(allToys)
-    const [displayedToys, setDisplayedToys] = useState(20);
-    const toysToDisplay = toys.slice(0, displayedToys)
-    const hasMoreResults = allToys.length > displayedToys;
+    // const [displayedToys, setDisplayedToys] = useState(20);
+    // const toysToDisplay = toys.slice(0, displayedToys)
+    // const hasMoreResults = allToys.length > displayedToys;
 
     const [searchText, setSearchText] = useState("");
     const handleSearch = () => {
         fetch(`https://b7a11-toy-marketplace-server-side-mishukmahbub.vercel.app/getToysByText/${searchText}`)
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
+            // console.log(data);
             setToys(data);
           });
       };
 
 
-    const loadMoreResults = () => {
-        setDisplayedToys(displayedToys + 20);
-    };
+    // const loadMoreResults = () => {
+    //     setDisplayedToys(displayedToys + 20);
+    // };
     return (
         <div className='my-8'>
             <div className="form-control my-4">
@@ -49,7 +49,7 @@ const AllToys = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {toysToDisplay?.map((toy, index) => (
+                        {toys?.map((toy, index) => (
 
                             <tr key={toy._id}>
                                 <th>{index + 1}</th>
@@ -67,9 +67,9 @@ const AllToys = () => {
                 </table>
             </div>
             {/* Render the "Load More" button */}
-            {hasMoreResults && <div className='text-center my-4'>
+            {/* {hasMoreResults && <div className='text-center my-4'>
                 <button className='btn btn-primary' onClick={loadMoreResults}>Load More</button>
-            </div>}
+            </div>} */}
         </div >
     );
 };

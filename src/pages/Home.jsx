@@ -27,7 +27,7 @@ const Home = () => {
         fetch(`https://b7a11-toy-marketplace-server-side-mishukmahbub.vercel.app/getToysBySubCategory/racing-cars`)
             .then((res) => res.json())
             .then((data) => {
-                console.log(data);
+                // console.log(data);
                 setRacingCars(data);
             });
     }, []);
@@ -37,7 +37,7 @@ const Home = () => {
         fetch(`https://b7a11-toy-marketplace-server-side-mishukmahbub.vercel.app/getToysBySubCategory/city-cars`)
             .then((res) => res.json())
             .then((data) => {
-                console.log(data);
+                // console.log(data);
                 setCityCars(data);
             });
     }, []);
@@ -47,7 +47,7 @@ const Home = () => {
         fetch(`https://b7a11-toy-marketplace-server-side-mishukmahbub.vercel.app/getToysBySubCategory/off-road-cars`)
             .then((res) => res.json())
             .then((data) => {
-                console.log(data);
+                // console.log(data);
                 setOffRoadCars(data);
             });
     }, []);
