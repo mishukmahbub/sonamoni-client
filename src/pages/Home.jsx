@@ -4,8 +4,10 @@ import CarCard from '../components/CarCard';
 import FAQ from '../components/FAQ';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import useTitle from '../hooks/useTitle';
 
 const Home = () => {
+    useTitle('Home');
     // racing cars
     const [racingCars, setRacingCars] = useState([]);
     useEffect(() => {

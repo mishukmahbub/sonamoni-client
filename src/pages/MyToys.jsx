@@ -4,8 +4,10 @@ import { AuthContext } from '../contexts/AuthProvider';
 import EditToyModal from '../components/EditToyModal';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import useTitle from '../hooks/useTitle';
 
 const MyToys = () => {
+    useTitle('My Toys');
     const { user } = useContext(AuthContext);
     const [toys, setToys] = useState([]);
     const [control, setControl] = useState(false);

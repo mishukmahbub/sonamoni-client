@@ -1,11 +1,10 @@
-/* eslint-disable react/no-unescaped-entities */
-// eslint-disable-next-line no-unused-vars
 import React from 'react';
+import useTitle from '../hooks/useTitle';
 
 
 
 const Blog = () => {
-
+    useTitle('Blog');
 
     return (
         <>
