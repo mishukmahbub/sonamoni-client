@@ -6,19 +6,19 @@ import useTitle from '../hooks/useTitle';
 const ErrorPage = () => {
     useTitle('Error');
     return (
-        <section className='flex items-center h-screen p-16 bg-gray-100 text-gray-900'>
-            <div className='container flex flex-col items-center justify-center px-5 mx-auto my-8'>
+        <section className='h-screen'>
+            <div className='container flex flex-col items-center mx-auto'>
                 <figure className=''>
-                    <img src="https://internetdevels.com/sites/default/files/public/blog_preview/404_page_cover.jpg" alt="" />
+                    <img src="https://thumbs.dreamstime.com/b/print-144211553.jpg" alt="" className='w-11/12'/>
                 </figure>
-                <div className='max-w-md text-center mt-8'>
-                    <Link
-                        to='/'
-                        className='px-8 py-3 font-semibold rounded bg-cyan-200 text-gray-900'
-                    >
-                        Back to homepage
-                    </Link>
-                </div>
+            </div>
+            <div className='text-center'>
+                <Link
+                    to='/'
+                    className='px-8 py-3 font-semibold rounded btn-secondary'
+                >
+                    Back to homepage
+                </Link>
             </div>
         </section>
     )
